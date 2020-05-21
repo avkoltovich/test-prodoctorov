@@ -26,10 +26,10 @@ class Model {
   }
 
   setAlbums(id) {
-    this._albums = Array.from(albums);
+    this._albums = Array.from(albumsMocks);
   }
 
-  setImages(images) {
-    this._images = Array.from(images);
+  setImages() {
+    this._images = Array.from(imagesMocks);
   }
 }

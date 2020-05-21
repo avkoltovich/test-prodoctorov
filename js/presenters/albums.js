@@ -11,6 +11,12 @@ class AlbumsPresenter {
 
     for (const album of this._albums) {
       const albumsItemComponent = new AlbumsItem(album);
+
+      albumsItemComponent.setCollapseHandler(() => {
+        const imagesPresenter = new ImagesPresenter(albumsItemComponent, this._model);
+        imagesPresenter.render();
+      });
+
       render(albumsListComponent, albumsItemComponent, InsertionPosition.BEFOREEND);
     }
 

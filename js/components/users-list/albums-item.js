@@ -9,6 +9,12 @@ class AlbumsItem extends AbstractComponent {
     return this._createAlbumsItemTemplate(this._album);
   }
 
+
+  setCollapseHandler(handler) {
+    this.getElement().querySelector(`.user__album-title`)
+      .addEventListener(`click`, handler);
+  }
+
   _createAlbumsItemTemplate(album) {
     const {title} = album;
 

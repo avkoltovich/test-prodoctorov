@@ -1,10 +1,16 @@
 class ImagesItem extends AbstractComponent {
-  getTemplate() {
-    return createImagesItemTemplate();
+  constructor(image) {
+    super();
+
+    this._image = image;
   }
 
-  _createImagesItemTemplate(images) {
-    const {thumbnailUrl, title} = images;
+  getTemplate() {
+    return this._createImagesItemTemplate(this._image);
+  }
+
+  _createImagesItemTemplate(image) {
+    const {thumbnailUrl, title} = image;
 
     return (
       `<li class="user__album-img-item">

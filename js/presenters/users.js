@@ -10,6 +10,7 @@ class UsersPresenter {
 
     for (const user of this._users) {
       const usersItemComponent = new UsersItem(user);
+
       usersItemComponent.setCollapseHandler(() => {
         const albumsPresenter = new AlbumsPresenter(usersItemComponent, this._model);
         albumsPresenter.render();

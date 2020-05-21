@@ -24,7 +24,7 @@ const users = [
   }
 ]
 
-const albums = [
+const albumsMocks = [
   {
     "userId": 1,
     "id": 1,
@@ -77,7 +77,7 @@ const albums = [
   }
 ];
 
-const albumPictures = [
+const imagesMocks = [
   {
     "albumId": 1,
     "id": 1,
