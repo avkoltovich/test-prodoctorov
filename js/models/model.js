@@ -25,7 +25,7 @@ class Model {
     this._users = Array.from(users);
   }
 
-  setAlbums(albums) {
+  setAlbums(id) {
     this._albums = Array.from(albums);
   }
 

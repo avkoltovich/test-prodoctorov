@@ -5,7 +5,7 @@ class AlbumsList extends AbstractComponent {
 
   _createAlbumsListTemplate() {
     return (
-      `<ul class="user__albums-list"></ul>`
+      `<ul class="user__albums-list user__albums-list--show"></ul>`
     );
   }
 }
