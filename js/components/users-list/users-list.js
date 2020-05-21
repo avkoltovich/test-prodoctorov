@@ -1,4 +1,4 @@
-const createMenuTemplate = () => {
+const createUsersListTemplate = () => {
   return (
     `<ul class="site-main__users-list users"></ul>`
   );
@@ -6,6 +6,6 @@ const createMenuTemplate = () => {
 
 class UsersList extends AbstractComponent {
   getTemplate() {
-    return createMenuTemplate();
+    return createUsersListTemplate();
   }
 }
