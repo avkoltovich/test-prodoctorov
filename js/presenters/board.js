@@ -8,8 +8,8 @@ class BoardPresenter {
     const menuComponent = new Menu();
 
     menuComponent.setCatalogHandler(() => {
-      const usersListPresenter = new UsersListPresenter(this._container, this._model);
-      usersListPresenter.render();
+      const usersPresenter = new UsersPresenter(this._container, this._model);
+      usersPresenter.render();
     });
 
     render(mainContainer, menuComponent, InsertionPosition.AFTERBEGIN);

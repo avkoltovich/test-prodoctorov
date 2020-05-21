@@ -9,6 +9,11 @@ class UsersItem extends AbstractComponent {
     return this._createUsersItemTemplate(this._user);
   }
 
+  setCollapseHandler(handler) {
+    this.getElement().querySelector(`.user__name`)
+      .addEventListener(`click`, handler);
+  }
+
   _createUsersItemTemplate(user) {
     const {name} = user;
     return (

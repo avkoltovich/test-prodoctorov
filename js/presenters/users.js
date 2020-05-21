@@ -1,4 +1,4 @@
-class UsersListPresenter {
+class UsersPresenter {
   constructor(container, model) {
     this._container = container;
     this._model = model;
