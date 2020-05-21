@@ -1,9 +1,16 @@
 class UsersItem extends AbstractComponent {
-  getTemplate() {
-    return createUsersItemTemplate();
+  constructor(user) {
+    super();
+
+    this._user = user;
   }
 
-  _createUsersItemTemplate(name) {
+  getTemplate() {
+    return this._createUsersItemTemplate(this._user);
+  }
+
+  _createUsersItemTemplate(user) {
+    const {name} = user;
     return (
       `<li class="users__item user">
         <h2 class="user__name">${name}</h2>
