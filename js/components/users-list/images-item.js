@@ -9,6 +9,11 @@ class ImagesItem extends AbstractComponent {
     return this._createImagesItemTemplate(this._image);
   }
 
+  setImagePopupHandler(handler) {
+    this.getElement().querySelector(`.user__album-img-wrap`)
+      .addEventListener(`click`, handler);
+  }
+
   _createImagesItemTemplate(image) {
     const {thumbnailUrl, title} = image;
 
@@ -21,7 +26,9 @@ class ImagesItem extends AbstractComponent {
             <path d="M14 21l-8.22899 4.3262 1.57159-9.1631L.685209 9.67376 9.8855 8.33688 14 0l4.1145 8.33688 9.2003 1.33688-6.6574 6.48934 1.5716 9.1631L14 21z"/>
           </svg>
         </label>
-        <img src="${thumbnailUrl}" alt="${title}" class="user__album-img" width="150" height="150">
+        <p class="user__album-img-wrap" title="${title}">
+          <img src="${thumbnailUrl}" alt="${title}" class="user__album-img" width="150" height="150">
+        </p>
       </li>`
     );
   }

@@ -132,3 +132,29 @@ body {
 .user__album-favorite-checkbox:checked + .user__album-favorite-icon {
   fill: #ffd054;
 }
+
+.user__album-img-wrap {
+  position: relative;
+
+  margin: 0;
+}
+
+.user__album-img-wrap:hover::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: fit-content;
+  height: fit-content;
+  padding: 6px;
+
+  content: attr(title);
+
+  font-size: 20px;
+
+  background-color: burlywood;
+}
+
+.user__album-img {
+  display: block;
+}

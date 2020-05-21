@@ -11,6 +11,7 @@ class ImagesPresenter {
 
     for (const image of this._images) {
       const imagesItemComponent = new ImagesItem(image);
+
       render(imagesListComponent, imagesItemComponent, InsertionPosition.BEFOREEND);
     }
 
