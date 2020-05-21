@@ -1,2 +1,4 @@
-const menuComponent = new Menu();
-console.log(menuComponent.getElement())
+const mainContainer = document.querySelector(`.site-main`);
+
+const menuPresenter = new MenuPresenter(mainContainer);
+menuPresenter.render()
