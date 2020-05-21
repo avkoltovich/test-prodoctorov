@@ -5,7 +5,7 @@ class ImagesList extends AbstractComponent {
 
   _createImagesListTemplate() {
     return (
-      `<ul class="user__album-img-list user__album-img-list--show"></ul>`
+      `<ul class="user__album-img-list"></ul>`
     );
   }
 }

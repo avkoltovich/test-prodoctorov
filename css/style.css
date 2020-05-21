@@ -53,8 +53,8 @@ body {
   position: relative;
 }
 
-.users__item::before,
-.user__albums-item::before {
+.user__name::before,
+.user__album-title::before {
   position: absolute;
   top: 0;
   left: -20px;
@@ -64,11 +64,18 @@ body {
   content: ">";
 }
 
+.user__name--collapsed::before,
+.user__album-title--collapsed::before {
+  transform: rotate(90deg);
+}
+
 .user__name {
   margin-top: 0;
   margin-bottom: 0;
 
   font-weight: normal;
+
+  cursor: pointer;
 }
 
 .user__albums-list {
@@ -77,7 +84,7 @@ body {
   list-style: none;
 }
 
-.user__albums-list--show {
+.user__name--collapsed + .user__albums-list {
   display: block;
 }
 
@@ -85,21 +92,13 @@ body {
   position: relative;
 }
 
-.user__item::before {
-  position: absolute;
-  top: 0;
-  left: -20px;
-
-  font-size: 24px;
-
-  content: ">";
-}
-
 .user__album-title {
   margin-top: 0;
   margin-bottom: 0;
 
   font-weight: normal;
+
+  cursor: pointer;
 }
 
 .user__album-img-list {
@@ -108,7 +107,7 @@ body {
   list-style: none;
 }
 
-.user__album-img-list--show {
+.user__album-title--collapsed + .user__album-img-list {
   display: block;
 }
 
@@ -116,6 +115,12 @@ body {
   display: flex;
   align-items: top;
   margin-bottom: 10px;
+}
+
+.user__album-favorite-btn {
+  margin-bottom: auto;
+
+  cursor: pointer;
 }
 
 .user__album-favorite-icon {

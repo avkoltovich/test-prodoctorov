@@ -3,15 +3,27 @@ class UsersItem extends AbstractComponent {
     super();
 
     this._user = user;
+    this._renderHandler = null;
   }
 
   getTemplate() {
     return this._createUsersItemTemplate(this._user);
   }
 
+  setRenderHandler(handler) {
+    this._renderHandler = handler;
+    this.getElement().querySelector(`.user__name`)
+      .addEventListener(`click`, this._renderHandler);
+  }
+
   setCollapseHandler(handler) {
     this.getElement().querySelector(`.user__name`)
       .addEventListener(`click`, handler);
+  }
+
+  removeRenderHandler() {
+    this.getElement().querySelector(`.user__name`)
+      .removeEventListener(`click`, this._renderHandler);
   }
 
   _createUsersItemTemplate(user) {
