@@ -3,32 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
   <title>Тестовое задание FrontEnd от МедРейтинг (ПроДокторов)</title>
 </head>
 <body>
   <main class="site-main">
-    <h1 class="visually-hidden"></h1>
+    <h1 class="visually-hidden">Список пользователей</h1>
     <ul class="site-main__list menu">
       <li class="menu__item">
-        <button class="menu__btn">КАТАЛОГ</button>
+        <button type="button" class="menu__btn">КАТАЛОГ</button>
       </li>
       <li class="menu__item">
-        <button class="menu__btn">ИЗБРАННОЕ</button>
+        <button type="button" class="menu__btn">ИЗБРАННОЕ</button>
       </li>
     </ul>
     <ul class="site-main__users-list users">
       <li class="users__item user">
         <h2 class="user__name">Leanne Graham</h2>
-        <ul class="user__list">
+        <ul class="user__albums-list user__albums-list--show">
           <li class="user__item">
             <h3 class="user__album-title">quidem molestiae enim</h3>
-            <ul class="user__album-list">
-              <li class="user__album-item">
-                <input type="checkbox" name="favorite" id="1">
+            <ul class="user__album-img-list user__album-img-list--show">
+              <li class="user__album-img-item">
+                <label class="user__album-favorite-btn">
+                  <span class="visually-hidden">Добавить в избранное</span>
+                  <input id="user__album-favorite-1" class="user__album-favorite-checkbox  visually-hidden" type="checkbox" name="user__album-favorite" checked>
+                  <svg class="user__album-favorite-icon" width="28" height="28" viewBox="0 0 28 28">
+                    <path d="M14 21l-8.22899 4.3262 1.57159-9.1631L.685209 9.67376 9.8855 8.33688 14 0l4.1145 8.33688 9.2003 1.33688-6.6574 6.48934 1.5716 9.1631L14 21z"/>
+                  </svg>
+                </label>
                 <img src="https://via.placeholder.com/150/92c952" alt="accusamus beatae ad facilis cum similique qui sunt" class="user__album-img" width="150" height="150">
               </li>
-              <li class="user__album-item">
-                <input type="checkbox" name="favorite" id="1">
+              <li class="user__album-img-item">
+                <label class="user__album-favorite-btn">
+                  <span class="visually-hidden">Добавить в избранное</span>
+                  <input id="user__album-favorite-1" class="user__album-favorite-checkbox  visually-hidden" type="checkbox" name="user__album-favorite" checked>
+                  <svg class="user__album-favorite-icon" width="28" height="28" viewBox="0 0 28 28">
+                    <path d="M14 21l-8.22899 4.3262 1.57159-9.1631L.685209 9.67376 9.8855 8.33688 14 0l4.1145 8.33688 9.2003 1.33688-6.6574 6.48934 1.5716 9.1631L14 21z"/>
+                  </svg>
+                </label>
                 <img src="https://via.placeholder.com/150/771796" alt="reprehenderit est deserunt velit ipsam" class="user__album-img" width="150" height="150">
               </li>
             </ul>
