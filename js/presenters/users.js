@@ -13,7 +13,7 @@ class UsersPresenter {
 
       const usersItemComponentRenderHandler = (evt) => {
         evt.target.classList.toggle(`user__name--collapsed`);
-        const albumsPresenter = new AlbumsPresenter(usersItemComponent, this._model);
+        const albumsPresenter = new AlbumsPresenter(usersItemComponent, this._model, user.id);
         albumsPresenter.render();
 
         usersItemComponent.removeRenderHandler();

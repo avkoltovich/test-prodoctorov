@@ -1,20 +1,30 @@
 class AlbumsPresenter {
-  constructor(container, model) {
+  constructor(container, model, id) {
     this._container = container;
     this._model = model;
-    this._model.setAlbums();
-    this._albums = this._model.getAlbums();
+    this._albums = null;
+    this._id = id;
+
+    this._onAlbumsLoadSuccessHandlers = this._onAlbumsLoadSuccessHandlers.bind(this);
+
+    this._model.setAlbumsLoadSuccessHandlers(this._onAlbumsLoadSuccessHandlers);
   }
 
   render() {
+    this._model.setAlbums(this._id);
+  }
+
+  _onAlbumsLoadSuccessHandlers() {
+    const albums = this._model.getAlbums();
+
     const albumsListComponent = new AlbumsList();
 
-    for (const album of this._albums) {
+    for (const album of albums) {
       const albumsItemComponent = new AlbumsItem(album);
 
       const albumsItemComponentHandler = (evt) => {
         evt.target.classList.toggle(`user__album-title--collapsed`);
-        const imagesPresenter = new ImagesPresenter(albumsItemComponent, this._model);
+        const imagesPresenter = new ImagesPresenter(albumsItemComponent, this._model, album.id);
         imagesPresenter.render();
 
         albumsItemComponent.removeRenderHandler();
