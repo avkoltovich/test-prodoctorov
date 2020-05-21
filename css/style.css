@@ -1,0 +1,127 @@
+body {
+  padding-right: calc(50% - 512px);
+  padding-left: calc(50% - 512px);
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.site-main {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-main__list {
+  margin-bottom: 80px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 1024px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.menu__btn {
+  padding: 0;
+
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: cadetblue;
+
+  background-color: transparent;
+  border: 0;
+
+  cursor: pointer;
+}
+
+.users {
+  list-style: none;
+}
+
+.users__item {
+  position: relative;
+}
+
+.users__item::before {
+  position: absolute;
+  top: 0;
+  left: -20px;
+
+  font-size: 24px;
+
+  content: ">";
+}
+
+.user__name {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-weight: normal;
+}
+
+.user__albums-list {
+  display: none;
+
+  list-style: none;
+}
+
+.user__albums-list--show {
+  display: block;
+}
+
+.user__item {
+  position: relative;
+}
+
+.user__item::before {
+  position: absolute;
+  top: 0;
+  left: -20px;
+
+  font-size: 24px;
+
+  content: ">";
+}
+
+.user__album-title {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-weight: normal;
+}
+
+.user__album-img-list {
+  display: none;
+
+  list-style: none;
+}
+
+.user__album-img-list--show {
+  display: block;
+}
+
+.user__album-img-item {
+  display: flex;
+  align-items: top;
+  margin-bottom: 10px;
+}
+
+.user__album-favorite-icon {
+  margin-right: 20px;
+
+  fill: grey;
+}
+
+.user__album-favorite-checkbox:checked + .user__album-favorite-icon {
+  fill: #ffd054;
+}
