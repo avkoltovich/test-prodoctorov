@@ -1,11 +1,11 @@
-const createUsersListTemplate = () => {
-  return (
-    `<ul class="site-main__users-list users"></ul>`
-  );
-};
-
 class UsersList extends AbstractComponent {
   getTemplate() {
-    return createUsersListTemplate();
+    return this._createUsersListTemplate();
+  }
+
+  _createUsersListTemplate() {
+    return (
+      `<ul class="site-main__users-list users"></ul>`
+    );
   }
 }
