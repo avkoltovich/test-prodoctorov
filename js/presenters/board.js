@@ -1,4 +1,4 @@
-class MenuPresenter {
+class BoardPresenter {
   constructor(container) {
     this._container = container;
   }
@@ -6,7 +6,7 @@ class MenuPresenter {
   render() {
     const menuComponent = new Menu();
 
-    menuComponent.setCatalogHandler()
+    menuComponent.setCatalogHandler
 
     render(mainContainer, menuComponent);
   }

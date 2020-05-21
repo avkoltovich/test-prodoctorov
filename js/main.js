@@ -1,4 +1,4 @@
 const mainContainer = document.querySelector(`.site-main`);
 
-const menuPresenter = new MenuPresenter(mainContainer);
-menuPresenter.render()
+const boardPresenter = new BoardPresenter(mainContainer);
+boardPresenter.render()
