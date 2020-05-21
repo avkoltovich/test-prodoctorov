@@ -12,6 +12,11 @@ class ImagesPresenter {
     for (const image of this._images) {
       const imagesItemComponent = new ImagesItem(image);
 
+      imagesItemComponent.setImagePopupHandler(() => {
+        const imagePopupComponent = new ImagePopup(image);
+        render(imagesItemComponent, imagePopupComponent, InsertionPosition.BEFOREEND);
+      });
+
       render(imagesListComponent, imagesItemComponent, InsertionPosition.BEFOREEND);
     }
 
