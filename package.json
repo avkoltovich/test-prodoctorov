@@ -1,0 +1,25 @@
+{
+  "name": "prodoctorov-test",
+  "version": "1.0",
+  "private": true,
+  "description": "Тестовое задание FrontEnd от МедРейтинг (ПроДокторов)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:avkoltovich/prodoctorov-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avkoltovich/prodoctorov-test/issues"
+  },
+  "devDependencies": {
+    "eslint": "6.3.0",
+    "eslint-config-htmlacademy": "0.5.2"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "test": "eslint js/"
+  },
+  "engines": {
+    "node": "8.11"
+  }
+}
