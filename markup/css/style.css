@@ -48,11 +48,13 @@ body {
   list-style: none;
 }
 
-.users__item {
+.users__item,
+.user__albums-item {
   position: relative;
 }
 
-.users__item::before {
+.users__item::before,
+.user__albums-item::before {
   position: absolute;
   top: 0;
   left: -20px;
