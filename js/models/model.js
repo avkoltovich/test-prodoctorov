@@ -45,11 +45,9 @@ class Model {
   }
 
   setToLocalStorage(image) {
-    const localStorageKeys = Object.keys(localStorage);
-    const keyIndex = localStorageKeys.findIndex((item) => item === `images`);
     let currentLocalStorage = [];
 
-    if (keyIndex === -1) {
+    if (!this._isInLocalStorage()) {
       currentLocalStorage.push(image);
       localStorage.images = JSON.stringify(currentLocalStorage);
     } else {
@@ -67,7 +65,11 @@ class Model {
   }
 
   getFromLocalStorage() {
-    return JSON.parse(localStorage.images);
+    if (this._isInLocalStorage()) {
+      return JSON.parse(localStorage.images);
+    }
+
+    return false;
   }
 
   setUsersLoadSuccessHandlers(handler) {
@@ -84,5 +86,16 @@ class Model {
 
   _callHandlers(handlers) {
     handlers.forEach((handler) => handler());
+  }
+
+  _isInLocalStorage() {
+    const localStorageKeys = Object.keys(localStorage);
+    const keyIndex = localStorageKeys.findIndex((item) => item === `images`);
+
+    if (keyIndex === -1) {
+      return false;
+    }
+
+    return true;
   }
 }
