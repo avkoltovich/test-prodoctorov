@@ -16,7 +16,7 @@ class ImagePopup extends AbstractComponent {
 
     return (
       `<section class="image-popup">
-        <h4 class="image-popup__heading"></h4>
+        <h4 class="image-popup__heading">${title}</h4>
         <p class="image-popup__img-wrap">
           <img src="${url}" alt="${title}" class="image-popup__img" width="600" height="600">
         </p>
