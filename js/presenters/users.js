@@ -33,6 +33,8 @@ class UsersPresenter {
   }
 
   remove() {
-    this._usersListComponent.getElement().remove();
+    if (this._usersListComponent) {
+      this._usersListComponent.getElement().remove();
+    }
   }
 }

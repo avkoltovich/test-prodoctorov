@@ -16,12 +16,20 @@ class ImagesPresenter {
 
   renderFormLocalStorage() {
     const images = this._model.getFromLocalStorage();
+    if (images) {
+      this._imagesListComponent = this._createImagesListComponent(images, Mode.FAVORITE);
 
-    this._imagesListComponent = this._createImagesListComponent(images, Mode.FAVORITE);
+      this._imagesListComponent.getElement().classList.add(`user__album-img-list--show`);
 
-    this._imagesListComponent.getElement().classList.add(`user__album-img-list--show`);
+      render(this._container, this._imagesListComponent, InsertionPosition.BEFOREEND);
+    }
 
-    render(this._container, this._imagesListComponent, InsertionPosition.BEFOREEND);
+  }
+
+  remove() {
+    if (this._imagesListComponent) {
+      this._imagesListComponent.getElement().remove();
+    }
   }
 
   _createImagesListComponent(images, mode = Mode.DEFAULT) {
@@ -50,9 +58,5 @@ class ImagesPresenter {
     this._imagesListComponent = this._createImagesListComponent(images);
 
     render(this._container, this._imagesListComponent, InsertionPosition.BEFOREEND);
-  }
-
-  remove() {
-    this._imagesListComponent.getElement().remove();
   }
 }
