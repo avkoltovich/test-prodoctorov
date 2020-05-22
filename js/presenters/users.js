@@ -3,10 +3,11 @@ class UsersPresenter {
     this._container = container;
     this._model = model;
     this._users = this._model.getUsers();
+    this._usersListComponent = null;
   }
 
   render() {
-    const usersListComponent = new UsersList();
+    this._usersListComponent = new UsersList();
 
     for (const user of this._users) {
       const usersItemComponent = new UsersItem(user);
@@ -25,9 +26,13 @@ class UsersPresenter {
 
       usersItemComponent.setRenderHandler(usersItemComponentRenderHandler);
 
-      render(usersListComponent, usersItemComponent, InsertionPosition.BEFOREEND);
+      render(this._usersListComponent, usersItemComponent, InsertionPosition.BEFOREEND);
     }
 
-    render(this._container, usersListComponent, InsertionPosition.BEFOREEND);
+    render(this._container, this._usersListComponent, InsertionPosition.BEFOREEND);
+  }
+
+  remove() {
+    this._usersListComponent.getElement().remove();
   }
 }

@@ -1,16 +1,35 @@
 class Menu extends AbstractComponent {
+  constructor() {
+    super();
+
+    this._catalogHandler = null;
+    this._favoriteHandler = null;
+  }
+
   getTemplate() {
     return this._createMenuTemplate();
   }
 
   setCatalogHandler(handler) {
+    this._catalogHandler = handler;
     this.getElement().querySelector(`.menu__btn--catalog`)
-      .addEventListener(`click`, handler);
+      .addEventListener(`click`, this._catalogHandler);
   }
 
   setFavoriteHandler(handler) {
+    this._favoriteHandler = handler
     this.getElement().querySelector(`.menu__btn--favorite`)
-      .addEventListener(`click`, handler);
+      .addEventListener(`click`, this._favoriteHandler);
+  }
+
+  removeCatalogHandler() {
+    this.getElement().querySelector(`.menu__btn--catalog`)
+      .removeEventListener(`click`, this._catalogHandler);
+  }
+
+  removeFavoriteHandler() {
+    this.getElement().querySelector(`.menu__btn--favorite`)
+      .removeEventListener(`click`, this._favoriteHandler);
   }
 
   _createMenuTemplate() {

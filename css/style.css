@@ -107,6 +107,10 @@ body {
   list-style: none;
 }
 
+.user__album-img-list--show {
+  display: block;
+}
+
 .user__album-title--collapsed + .user__album-img-list {
   display: block;
 }
@@ -139,7 +143,7 @@ body {
   margin: 0;
 }
 
-.user__album-img-wrap:hover::before {
+.user__album-img-wrap--hover:hover::before {
   position: absolute;
   top: 0;
   left: 0;

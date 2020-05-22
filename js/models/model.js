@@ -44,6 +44,32 @@ class Model {
     });
   }
 
+  setToLocalStorage(image) {
+    const localStorageKeys = Object.keys(localStorage);
+    const keyIndex = localStorageKeys.findIndex((item) => item === `images`);
+    let currentLocalStorage = [];
+
+    if (keyIndex === -1) {
+      currentLocalStorage.push(image);
+      localStorage.images = JSON.stringify(currentLocalStorage);
+    } else {
+      currentLocalStorage = this.getFromLocalStorage();
+      const index = currentLocalStorage.findIndex((item) => item.id === image.id);
+
+      if (index === -1) {
+        currentLocalStorage.push(image);
+        localStorage.images = JSON.stringify(currentLocalStorage);
+      } else {
+        currentLocalStorage = [].concat(currentLocalStorage.slice(0, index), currentLocalStorage.slice(index + 1));
+        localStorage.images = JSON.stringify(currentLocalStorage);
+      }
+    }
+  }
+
+  getFromLocalStorage() {
+    return JSON.parse(localStorage.images);
+  }
+
   setUsersLoadSuccessHandlers(handler) {
     this._onUsersLoadSuccessHandlers.push(handler);
   }
